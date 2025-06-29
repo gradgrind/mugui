@@ -1,0 +1,17 @@
+# Project-specific
+
+#FLTK build
+/mugui/fltk_build/
+/mugui/bin/
+/mugui/include/
+/mugui/lib/
+/mugui/share/
+
+### Other
+_*
+/build/
+tmp/
+/.vscode/
+CMakeLists.txt.user
+
+go.sum

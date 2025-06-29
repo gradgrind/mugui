@@ -1,0 +1,75 @@
+# buttons
+&APP_WIDTH: 600,
+&APP_HEIGHT: 400,
+[
+  [SETUP,      
+    # [BACKGROUND, ffffff],
+    # [BACKGROUND2, c8ffff],
+    # [FOREGROUND, 804040]
+    [BACKGROUND, 202020],
+    [BACKGROUND2, 404040],
+    [FOREGROUND, f0f0f0],
+    [SELECTION_BACKGROUND, a0a0f0],
+  ],
+  
+  [NEW, Window, MainWindow, {
+      FLOATING: 1,
+      WIDTH: &APP_WIDTH,
+      HEIGHT: &APP_HEIGHT,
+      #ESC_CLOSES: 1,
+    },
+    [TEXT, "Buttons Test"]
+  ],
+
+  # button bar
+
+  [NEW, PushButton, PB1, {
+    },
+    [TEXT, "Press me!"]
+  ],
+  [NEW, PushButton, PB2, {
+    },
+    [TEXT, "PushButton 2"]
+  ],
+  [NEW, Hlayout, l_bbar, {
+      GAP: 30,
+      MARGIN: 20,
+      GRID_ALIGN: HORIZONTAL,
+    },
+    [ADD, PB1, PB2]
+  ],
+  
+  
+  [NEW, Label, Label_1, {
+      LABEL_ALIGN: LEFT
+    },
+    [TEXT, "Pushed"]
+  ],
+  [NEW, Output, Output_1, {
+      GRID_ALIGN: HORIZONTAL,
+      GRID_GROW: 1
+    },
+    [clear_visible_focus]
+  ],
+  [NEW, Hlayout, l_output, {
+      GRID_ALIGN: HORIZONTAL,
+    },
+    [ADD, Label_1, Output_1]
+  ],
+  
+  [NEW, Vlayout, l_MainWindow, {
+      GAP: 10,
+      MARGIN: 5,
+      BOXTYPE: FLAT_BOX,
+      FLOATING: 1      
+    },
+    # [COLOUR, ffff00], # No effect if (FL_NO_BOX)
+    [ADD, l_bbar, l_output]
+  ],
+  
+  # [WIDGET, PB1,
+  #   [SIZE, 200, 60]
+  # ],
+
+  [WIDGET, MainWindow, [SET_LAYOUT, l_MainWindow]]
+]

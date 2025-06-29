@@ -1,0 +1,65 @@
+# grid
+&APP_WIDTH: 320,
+&APP_HEIGHT: 180,
+&BACKGROUND: ffffff,
+
+[
+  [NEW, Window, MainWindow,
+    {
+      FLOATING: 1,
+      WIDTH: &APP_WIDTH,
+      HEIGHT: &APP_HEIGHT,
+      MIN_WIDTH: 100,
+      MIN_HEIGHT: 80,
+      ESC_CLOSES: 1
+    },
+    [TEXT, "Grid Test"],
+  ],
+  [NEW, PushButton, b0,
+    {
+      GRID_ALIGN: FILL
+    },
+    [TEXT, "Many New Ideas"]
+  ],
+  [NEW, PushButton, b1,
+    {
+      GRID_ALIGN: FILL
+    },
+    [TEXT, "A bunch of new Options"]
+  ],
+  [NEW, PushButton, b2,
+    {
+      GRID_ALIGN: FILL
+    },
+    [TEXT, "About this, that and the other"]
+  ],
+  [NEW, PushButton, b3,
+    {
+      GRID_ALIGN: FILL
+    },
+    [TEXT, "Help me now!"]
+  ],
+  [NEW, PushButton, b4,
+    {
+      GRID_ALIGN: FILL
+    },
+    [TEXT, "Quit"]
+  ],
+  [NEW, Grid, l_MainWindow, {
+      MARGIN: 3,
+      GAP: 10,
+      BOXTYPE: FLAT_BOX
+    },
+    [COLOUR, &BACKGROUND],
+    [SHOW_GRID, 1],
+    [ADD,
+      [b0, 0, 0],
+      [b1, 0, 1, 1, 2],
+      [b2, 1, 0, 2, 2],
+      [b3, 1, 2],
+      [b4, 2, 2]
+    ],
+  ],
+  
+  [WIDGET, MainWindow, [SET_LAYOUT, l_MainWindow]]
+]

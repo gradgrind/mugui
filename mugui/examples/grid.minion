@@ -1,0 +1,50 @@
+# grid
+[
+  [NEW, PushButton, b0,
+    {
+      GRID_ALIGN: FILL
+    },
+    [TEXT, "New"]
+  ],
+  [NEW, PushButton, b1,
+    {
+      GRID_ALIGN: FILL
+    },
+    [TEXT, "Options"]
+  ],
+  [NEW, PushButton, b2,
+    {
+      GRID_ALIGN: FILL
+    },
+    [TEXT, "About"]
+  ],
+  [NEW, PushButton, b3,
+    {
+      GRID_ALIGN: FILL
+    },
+    [TEXT, "Help"]
+  ],
+  [NEW, PushButton, b4,
+    {
+      GRID_ALIGN: FILL
+    },
+    [TEXT, "Quit"]
+  ],
+  [NEW, Grid, l_MainWindow, {
+      #MARGIN: 3,
+      GAP: 10,
+      BOXTYPE: FLAT_BOX
+    },
+    [SHOW_GRID, 1],
+    [COLOUR, ff00ff], # No effect if (FL_NO_BOX)
+    [ADD,
+      [b0, 0, 0],
+      [b1, 0, 2],
+      [b2, 1, 1],
+      [b3, 2, 0],
+      [b4, 2, 2]
+    ],
+    [ROW_WEIGHTS, [1, 1]],
+    [COL_WEIGHTS, [0, 1]]
+  ]
+]

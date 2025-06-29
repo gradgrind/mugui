@@ -1,0 +1,175 @@
+# Complex layout
+&APP_WIDTH: 1000,
+&APP_HEIGHT: 700,
+&BACKGROUND: fffff0,
+
+[
+  [SETUP,      
+    # [BACKGROUND, ffffff],
+    # [BACKGROUND2, c8ffff],
+    # [FOREGROUND, 804040]
+    # [BACKGROUND, 202020],
+    # [BACKGROUND2, 404040],
+    # [FOREGROUND, f0f0f0],
+    # [SELECTION_BACKGROUND, a0a0f0],
+  ],
+  
+  [NEW, Window, MainWindow,
+    {
+      WIDTH: &APP_WIDTH,
+      HEIGHT: &APP_HEIGHT,
+      FLOATING: 1
+    },
+    [ TEXT, "Complex Window Test" ],
+  ],
+
+  [NEW, Box, todo,
+    {
+      BOXTYPE: FLAT_BOX,
+      GRID_ALIGN: HORIZONTAL
+    },
+    [TEXT, "Another Panel"],
+    [COLOUR, 40e0e0],
+    [HEIGHT, 50]
+  ],
+  
+  [NEW, Choice, TableType, {},
+    # [clear_visible_focus],
+    [WIDTH, 100],
+    [ADD, "Type 1", "Type 2"]
+  ],
+  [NEW, Label, TableRowLabel,
+    {
+      LABEL_ALIGN: RIGHT
+    },
+    [TEXT, "X X X X X X:"]
+  ],
+  [NEW, Choice, TableRow, {},
+    # [clear_visible_focus],
+    [WIDTH, 150],
+    [ADD,
+      "FB: Fritz Jolander Jeremias Braun",
+      "DG: Diego Garcia",
+      "PM: Pamela Masterson"
+    ]
+  ],
+  [NEW, Label, TableTotalsLabel,
+    {
+      LABEL_ALIGN: RIGHT
+    },
+    [TEXT, "Total lessons:"]
+  ],
+  [NEW, Output, TableTotals,
+    {
+      GRID_ALIGN: HORIZONTAL,
+      GRID_GROW: 1
+    },
+    [VALUE, "Read only ˝Öößŋħĸ€"],
+    [clear_visible_focus]
+  ],
+  [NEW, Hlayout, ViewSelect,
+    {
+      MARGIN: 8,
+      GAP: 5,
+      GRID_ALIGN: HORIZONTAL
+    },
+    [ADD,
+      TableType,
+      TableRowLabel,
+      TableRow,
+      TableTotalsLabel,
+      TableTotals
+    ],
+    [SHOW_GRID, 1],
+  ],
+
+  [NEW, RowTable, T1,
+    {
+      GRID_ALIGN: FILL,
+      GRID_GROW: 1
+    },
+    [col_headers, "Col 1", "Column 2", "Col 3", "Col 4"],
+    [col_header_height, 30],
+    [row_header_width, 80],
+    [row_height_all, 30],
+    [row_header_colour, ffe8e8],
+    [add_row, "Row 1", A, B, C, D],
+    [add_row, "Long Row 2", a, b, c, d],
+    [add_row, "Row 3", "", "", "A very long table entry", last]
+  ],
+  [NEW, PopupEditor, EF1, {},
+    [TEXT, "EDITOR 1"],
+    [clear_visible_focus]
+  ],
+  [NEW, TextLine, EF2, {},
+    [TEXT, "TEXT 1"],
+  ],
+  [NEW, TextLine, EF2X, {},
+    [TEXT, "TEXT 2"],
+  ],
+  [NEW, Choice, EF3, {},
+    [TEXT, "CHOICE 1"],
+  ],
+  [NEW, Hline, Sep1,
+    {
+      SPAN: 1
+    }
+  ],
+  [NEW, PopupEditor, EF4, {},
+    [TEXT, "ANOTHER EDITOR"],
+    [clear_visible_focus]
+  ],
+  [NEW, Checkbox, EF5,
+    {
+      SPAN: 1
+    },
+    [ TEXT, "CHECKBOX with a long label" ]
+  ],
+  [NEW, List, EF6,
+    {
+      SPAN: 2 # variable height
+    },
+    [TEXT, "List entry"],
+  ],
+  [NEW, EditForm, EditorForm,
+    {
+      MARGIN: 5,
+      ROW_GAP: 12,
+      BOXTYPE: ENGRAVED_BOX,
+      LABEL_POS: LEFT,
+      LABEL_GAP: 8,
+      GRID_ALIGN: VERTICAL
+    },
+    [WIDTH, 300],
+    [ADD, EF1, EF2, EF2X, EF3, Sep1, EF4, EF5, EF6]
+  ],
+  [NEW, Hlayout, Content,
+    {
+      GAP: 3,
+      GRID_ALIGN: FILL,
+      GRID_GROW: 1
+    },
+    [ADD, T1, EditorForm]
+  ],
+  
+  [NEW, Vlayout, l_MainWindow, {},
+    [ADD, todo, ViewSelect, Content]
+  ],
+  
+  [WIDGET, EF1,
+    [VALUE, "Changed First"]
+  ],
+  [WIDGET, EF3,
+    [ADD, "Item1", "Item2"]
+  ],
+  [WIDGET, EF6,
+    [SET, "New list 1", "New list 2"]
+  ],
+  [NEW, Dialog, popup,
+    {
+      FLOATING: 1
+    }
+  ],
+  
+  [WIDGET, MainWindow, [SET_LAYOUT, l_MainWindow]]
+]
