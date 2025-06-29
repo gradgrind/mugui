@@ -9,7 +9,7 @@
 
 ### Other
 _*
-/build/
+build/
 tmp/
 /.vscode/
 CMakeLists.txt.user

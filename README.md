@@ -25,6 +25,18 @@ For running programs built using `mugui` you will need some system libs which ar
 
 *Tip*: The [rust-fltk project](https://github.com/fltk-rs/fltk-rs) may be helpful in determining dependencies, both for building and for running. Note, however, that the FLTK configuration will affect this.
 
+## Building the C library and test applcation
+
+On Linux, once the FLTK libraries have been built, it should be enough to run
+
+`sh mugui_build.sh`
+
+in the root directory.
+
+Then, to run the test program:
+
+`(cd build/release/test1 && ./mugui_test1)`
+
 ## Using the Go module
 
 At present, this is not set up for direct usage as a "require" in a `go.mod`. It seems more convenient at present to download it and use the `mugui` subdirectory as a local package.

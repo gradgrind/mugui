@@ -24,7 +24,7 @@ const char* callback0(
                 wtab = "(buttons)l_MainWindow";
                 if (!tabs[wtab]) {
                     callback_data.append( //
-                        ",[MINION_FILE, ../../../examples/buttons.minion]");
+                        ",[MINION_FILE, ../../examples/buttons.minion]");
                     callback_data.append(",[WIDGET, ()viewer, [ADD, ");
                     callback_data.append(wtab);
                     callback_data.append("]]");
@@ -40,7 +40,7 @@ const char* callback0(
                 wtab = "(grid)l_MainWindow";
                 if (!tabs[wtab]) {
                     callback_data.append( //
-                        ",[MINION_FILE, ../../../examples/grid.minion]");
+                        ",[MINION_FILE, ../../examples/grid.minion]");
                     callback_data.append(",[WIDGET, ()viewer, [ADD, ");
                     callback_data.append(wtab);
                     callback_data.append("]]");
@@ -56,7 +56,7 @@ const char* callback0(
                 wtab = "(studentgroups)l_MainWindow";
                 if (!tabs[wtab]) {
                     callback_data.append( //
-                        ",[MINION_FILE, ../../../examples/studentgroups.minion]");
+                        ",[MINION_FILE, ../../examples/studentgroups.minion]");
                     callback_data.append(",[WIDGET, ()viewer, [ADD, ");
                     callback_data.append(wtab);
                     callback_data.append("]]");
@@ -72,7 +72,7 @@ const char* callback0(
                 wtab = "(complex)l_MainWindow";
                 if (!tabs[wtab]) {
                     callback_data.append( //
-                        ",[MINION_FILE, ../../../examples/complex.minion]");
+                        ",[MINION_FILE, ../../examples/complex.minion]");
                     callback_data.append(",[WIDGET, ()viewer, [ADD, ");
                     callback_data.append(wtab);
                     callback_data.append("]]");
@@ -221,11 +221,11 @@ int main()
     auto fplist = {
         // These paths are relative to the directory
         // in which the binary is built.
-        "../../../examples/demo.minion",
-        "../../../examples/buttons1.minion",
-        "../../../examples/grid1.minion",
-        "../../../examples/grid2.minion",
-        "../../../examples/complex1.minion"
+        "../../examples/demo.minion",
+        "../../examples/buttons1.minion",
+        "../../examples/grid1.minion",
+        "../../examples/grid2.minion",
+        "../../examples/complex1.minion"
         //
     };
 
