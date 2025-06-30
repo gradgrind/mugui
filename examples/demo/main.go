@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/gradgrind/gominion"
-	"mugui"
+	"examples/mugui"
 )
 
 func main() {

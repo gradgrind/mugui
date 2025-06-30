@@ -3,15 +3,14 @@ package main
 import (
 	"fmt"
 	"path/filepath"
-	"strings"
 
 	"github.com/gradgrind/gominion"
-	"mugui"
+	"examples/mugui"
 )
 
 func main() {
 	fp, err := filepath.Abs(
-		filepath.Join("..", "..", "examples", "buttons1.minion"))
+		filepath.Join("..", "..", "examples", "grid2.minion"))
 	if err != nil {
 		panic(err)
 	}
@@ -31,15 +30,12 @@ func callback(data string) string {
 		fmt.Println("  -->")
 		fmt.Println(gominion.DumpMinion(v, -1))
 	}
+
 	mm := v.(gominion.MList)
 	var wname string
 	mm.GetString(0, &wname)
 
-	var cbrx string
-	if strings.HasSuffix(wname, "PB1") {
-		cbrx = "[WIDGET, PB1, [SIZE, 300, 80]],"
-	}
-	cbr := fmt.Sprintf(`[%s[WIDGET,"Output_1",[VALUE,"%s"]]]`, cbrx, wname)
+	cbr := fmt.Sprintf(`[[WIDGET,"%s",[TEXT,"%s"]]]`, wname, wname)
 	fmt.Println("CB: " + cbr)
 	return cbr
 }
